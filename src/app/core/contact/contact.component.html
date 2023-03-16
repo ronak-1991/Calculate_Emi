@@ -1,0 +1,23 @@
+<app-home></app-home>
+<br>
+<div class="formContainer">
+    <form class="form" [formGroup]='contactForm'>
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="name" FormControlName="name">
+            </div>
+
+            <div class="col-auto">
+              <input type="email" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="Email" FormControlName="email">
+            </div>
+          </div><br>
+        
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" FormControlName="comment">comments</textarea>
+          </div><br>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </form>
+        
+        
+</div>
+

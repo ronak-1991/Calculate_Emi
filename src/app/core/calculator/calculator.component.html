@@ -1,0 +1,53 @@
+<app-home></app-home><br>
+
+<div class="main">
+<input type="range" min="30000" max="1000000" [(ngModel)]="loadAmount" (input)="amountChange('event1')">
+<div>Load amout is: {{ loadAmount }}</div><br>
+<input type="range" min="12" max="36" [(ngModel)]="month" (input)="monthChange('event2')">
+<div>no. of nonth: {{ month }}</div><br>
+<input type="range" step="0.1" min="8" max="16" [(ngModel)]="interest" (input)="interestChange('event3')">
+<div>Rate of interst: {{ interest }}</div><br>
+
+
+<div>
+  <label>Monthly EMI   :~</label>
+  <span>{{ calculateEMI() }}</span>
+</div>
+
+<div>
+    <label>Total interest   :~</label>
+    <span>{{ calculateEMI() * month - loadAmount }}</span>
+  </div>
+
+<div>
+  <label> Payable Amount  :~</label>
+  <span>{{ calculateEMI() * month }}</span>
+</div>
+</div>
+
+
+<table border="1px" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Payment No.</th>
+        <th>Beginning Balance</th>
+        <th>EMI</th>
+        <th>Principal</th>
+        <th>Interest</th>
+        <th>Ending Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let payment of payments">
+        <td>{{payment.id}}</td>
+        <td>{{payment.beginningBalance}}</td>
+        <td>{{payment.emi}}</td>
+        <td>{{payment.principal}}</td>
+        <td>{{payment.interest}}</td>
+        <td>{{payment.endingBalance}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  
